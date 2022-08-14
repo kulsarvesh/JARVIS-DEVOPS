@@ -1,0 +1,29 @@
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'mkdir NEW'
+                
+            }
+        }
+        stage('Test') { 
+            steps {
+                sh 'echo Devops-lnfinity-loop >> NEW/file2'
+                
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                sh 'cat NEW/file2'
+                
+            }
+        }
+        stage('Test2') { 
+            steps {
+                sh 'echo Hello guys >> new/file2'
+                
+            }
+        }
+    }
+}
